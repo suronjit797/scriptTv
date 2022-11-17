@@ -1,0 +1,78 @@
+:root {
+  --primary_color: #FFEF00;
+  --secondary_color: #1E1E1E;
+  --background_color: #000000;
+  --primary_shades: #10131A;
+  --secondary_shades: #0B0B0D;
+}
+
+body {
+  background-image: url('./assets/Ellipse1.png');
+  background-repeat: no-repeat;
+}
+
+
+.text_primary {
+  color: var(--primary_color);
+}
+
+.text_muted {
+  color: #989898;
+}
+
+.btn_primary {
+  background-color: var(--primary_color);
+  padding: 10px 30px;
+  color: #000;
+  border-radius: 10px;
+  transition: .4s ease-in-out;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.btn_primary:hover {
+  background-color: #fff565;
+  color: #000;
+}
+
+.btn_secondary {
+  background-color: var(--secondary_color);
+  padding: 10px 30px;
+  color: #fff;
+  border-radius: 10px;
+  transition: .4s ease-in-out;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.btn_secondary:hover {
+  background-color: #0f0e0e;
+
+}
+
+
+.section_header {
+  font-weight: 700;
+  font-size: 44px;
+  text-align: center;
+}
+
+.section_header span {
+  color: var(--primary_color);
+}
+
+
+
+.app {
+  background-position: top 5px right 0;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 575px) {
+  .section_header {
+    font-size: 32px;
+  }
+
+}
