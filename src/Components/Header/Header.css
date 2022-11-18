@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* padding: 20px 0; */
+    position: relative;
+    z-index: 999;
 }
 
 .main_nav .nav_menu {
@@ -31,7 +32,6 @@
     font-size: 16px;
     line-height: 20px;
     transition: .4s ease-in-out;
-    position: relative;
     position: relative;
 }
 
@@ -98,23 +98,103 @@
     display: block;
 }
 
-.main_nav .sub_menu-header{
+.main_nav .sub_menu-header {
     margin-bottom: 10px;
 }
 
-.main_nav .sub_menu-text{
+.main_nav .sub_menu-text {
     font-size: 14px;
 }
 
 
 .mobile_menu {
+    /* display: none; */
+    cursor: pointer;
+}
+
+.mobile_menu span {
+    height: 2px;
+    width: 30px;
+    margin: 6px 0;
+    display: block;
+    background-color: #fff;
+    transition: .2s ease-in-out;
+    transform-origin: center;
+}
+
+.mobile_menu.active span:first-child {
+    transform: rotate(-45deg) translate(-6px);
+}
+
+.mobile_menu.active span:nth-child(2) {
     display: none;
 }
 
+.mobile_menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-6px);
+}
 
 
 @media (max-width: 991px) {
-    .header {
-        display: none;
+    .main_nav {
+        padding: 20px 0;
+    }
+
+    .main_nav .nav_menu {
+        display: block;
+        position: absolute;
+        top: -600px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary_shades);
+        border-radius: 10px;
+        transition: .2s ease-in-out;
+        z-index: -1;
+        padding: 0;
+    }
+
+    .main_nav .nav_menu.active {
+        top: 80px;
+    }
+
+    .main_nav .nav_menu li {
+        padding: 15px 0;
+    }
+
+    .mobile_menu {
+        display: block;
+    }
+
+    .main_nav .nav_menu li{
+        display: block;
+        text-align: center;
+    }
+    /* submenu */
+    .main_nav .sub_menu {
+        position: relative;
+        margin-top: 20px;
+        max-width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 30px;
+    }
+
+    .main_nav .sub_menu .sub_menu-border {
+        border-right: 1px solid #292929;
+        height: 100%;
+        padding: 0 5px;
+    }
+
+    .main_nav .nav_menu li:hover .sub_menu {
+        display: block;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .main_nav .sub_menu .sub_menu-border{
+        border: transparent;
     }
 }

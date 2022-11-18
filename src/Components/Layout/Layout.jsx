@@ -2,6 +2,8 @@ import React, { memo, useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
+import './Layout.css'
+
 const Layout = memo(({ children, title }) => {
     useEffect(() => {
         document.title = `${title} - script.tv`

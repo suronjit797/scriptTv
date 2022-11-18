@@ -1,0 +1,11 @@
+@media (max-width:576px) {
+    .layout{
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
+@media (max-width:299px) {
+    .layout{
+        display: none;
+    }
+}

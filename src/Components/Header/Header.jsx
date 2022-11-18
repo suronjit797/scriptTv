@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo-light.png'
 
@@ -6,6 +6,11 @@ import './Header.css'
 
 
 const Header = memo(() => {
+
+    const [active, setActive] = useState(false)
+
+
+
     return (
         <header className='header container'>
             <nav className="main_nav">
@@ -19,14 +24,14 @@ const Header = memo(() => {
 
                 {/* menu list */}
 
-                <ul className='nav_menu'>
+                <ul className={active ? 'nav_menu active' : 'nav_menu'}>
                     <li>
                         <Link className='nav_link' to='/'>
                             Products
                         </Link>
                         <i className="ri-arrow-drop-down-line nav_down"></i>
                         <div className="sub_menu">
-                            <div className="row align-items-stretch">
+                            <div className="row gy-4 align-items-stretch">
                                 <div className="col-md-4">
                                     <div className="sub_menu-border">
                                         <div className="mb-5">
@@ -74,7 +79,7 @@ const Header = memo(() => {
                         <Link className='nav_link' to='/'>How it work</Link>
                         <i className="ri-arrow-drop-down-line nav_down"></i>
                         <div className="sub_menu">
-                            <div className="row align-items-stretch">
+                            <div className="row gy-4 align-items-stretch">
                                 <div className="col-md-6">
                                     <div className="sub_menu-border">
                                         <div>
@@ -113,7 +118,7 @@ const Header = memo(() => {
                 </ul>
 
 
-                <div className="mobile_menu">
+                <div className={active ? "mobile_menu active" : "mobile_menu"} onClick={()=>setActive(value => !value )}>
                     <span></span>
                     <span></span>
                     <span></span>
